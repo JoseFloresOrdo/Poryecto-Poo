@@ -2,31 +2,18 @@ public class GastoGasolina{
     private int tipocarro;
     private int kilometrosaldia;
 
-    public float AsignacionesGastos(int tipocarro, int kilometrosaldia){
-        // Int carro: Mediano (1) SUV (2) Electrico(3)
-        int a = getTipocarro();
-        if(a==1){
-            float math= 85*getKilometrosaldia(); // Un carro mediano emite 85g de CO2 x kilometro 
-            return math;    
-        }
 
-        if(a==2){
-            float math= 140* getKilometrosaldia();// Un carro tipo SUV emite 140g de CO2 x kilometro 
-            return math;
-                
-        }
-        
-        if(a==3){
-            float math= 65* getKilometrosaldia(); // Un carro electrico emite 65g de CO2 x kilometro 
-            return math;
-        }
-
-        else{
-            float math= 1*getKilometrosaldia();
-            return math;
-        }
+    public GastoGasolina() {
+        tipocarro=0;
+        kilometrosaldia=0;
 
     }
+
+    public GastoGasolina(int tipocarro, int kilometrosaldia) {
+        this.tipocarro = tipocarro;
+        this.kilometrosaldia = kilometrosaldia;
+    }
+ 
 
     /**
      * @return String return the tipocarro

@@ -6,11 +6,23 @@ public class GastoAgua{
     private int lavavajillas;
 
 
-    public float AsignacionesGastos(int inodoro, int regadera, int lavadora, int chorro){
-        float math= (getInodoro()*17)+(getChorro()*1)+(getRegadera()*20)+(getLavadora()*50)+(getLavavajillas()*10);
-        //17L promedio x descarga de inodoro, 1L por minuto abierto de chorro, 20L por minuto de regadera, 50L por ciclo de Lavadora, 10L x uso de lavavajillas 
-        return math;
+
+    public GastoAgua() {
+        inodoro = 0;
+        regadera=0;
+        lavadora=0;
+        chorro=0;
+        lavavajillas=0;
     }
+
+    public GastoAgua(int inodoro, int regadera, int lavadora, int chorro, int lavavajillas) {
+        this.inodoro = inodoro;
+        this.regadera = regadera;
+        this.lavadora = lavadora;
+        this.chorro = chorro;
+        this.lavavajillas = lavavajillas;
+    }
+
 
     public int getLavavajillas() {
         return this.lavavajillas;
