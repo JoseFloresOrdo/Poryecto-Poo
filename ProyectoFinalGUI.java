@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,8 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-public class ProyectoFinalGUI extends JFrame {
+import java.io.*
+;public class ProyectoFinalGUI extends JFrame {
 
 	private JPanel contentPane;
 	private Usuario usuario;
@@ -28,6 +27,17 @@ public class ProyectoFinalGUI extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		File Archivo = new File("C:" + File.separator + "Users" + File.separatorChar + "José Javier Flores" + File.separator + "Desktop" + File.separator + "Prueba.txt");
+		String Destino = Archivo.getAbsolutePath();
+        try{
+            Archivo.createNewFile();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        Escribiendo accede = new Escribiendo();
+
+        accede.escribir(Destino);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -52,16 +62,16 @@ public class ProyectoFinalGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		final Usuario usuario = new Usuario();
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(46, 139, 87));
-		panel.setBounds(6, 6, 555, 150);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		final JPanel verde = new JPanel();
+		verde.setBackground(new Color(46, 139, 87));
+		verde.setBounds(6, 6, 555, 150);
+		contentPane.add(verde);
+		verde.setLayout(null);
 		
-		final JLabel lblNewLabel = new JLabel("EcoEnergy");
-		lblNewLabel.setBounds(109, 18, 348, 106);
-		lblNewLabel.setFont(new Font("Songti TC", Font.BOLD | Font.ITALIC, 75));
-		panel.add(lblNewLabel);
+		final JLabel ecoEnergy = new JLabel("EcoEnergy");
+		ecoEnergy.setBounds(109, 18, 348, 106);
+		ecoEnergy.setFont(new Font("Songti TC", Font.BOLD | Font.ITALIC, 75));
+		verde.add(ecoEnergy);
 		
 		final JLabel inicioLabel = new JLabel("Inicio de Sesión");
 		inicioLabel.setFont(new Font("Lucida Grande", Font.BOLD, 20));
@@ -69,92 +79,101 @@ public class ProyectoFinalGUI extends JFrame {
 		contentPane.add(inicioLabel);
 		
 		final JPanel nombre = new JPanel();
-		nombre.setBackground(new Color(169, 169, 169));
+		nombre.setBackground(new Color(0, 139, 139));
 		nombre.setForeground(new Color(220, 220, 220));
-		nombre.setBounds(128, 256, 132, 26);
+		nombre.setBounds(106, 256, 154, 26);
 		contentPane.add(nombre);
 		nombre.setLayout(null);
 		
 		final JLabel nombreLabel = new JLabel("Nombre:");
-		nombreLabel.setBounds(39, 6, 54, 16);
+		nombreLabel.setBounds(54, 6, 54, 16);
 		nombre.add(nombreLabel);
 		
 		final JPanel correo = new JPanel();
 		correo.setLayout(null);
 		correo.setForeground(new Color(220, 220, 220));
-		correo.setBackground(new Color(169, 169, 169));
-		correo.setBounds(128, 299, 132, 26);
+		correo.setBackground(new Color(0, 128, 128));
+		correo.setBounds(106, 299, 154, 26);
 		contentPane.add(correo);
 		
 		final JLabel correoLabel = new JLabel("Correo:");
 		correoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		correoLabel.setBounds(39, 6, 54, 16);
+		correoLabel.setBounds(56, 6, 54, 16);
 		correo.add(correoLabel);
 		
 		final JPanel pais = new JPanel();
 		pais.setLayout(null);
 		pais.setForeground(new Color(220, 220, 220));
-		pais.setBackground(new Color(169, 169, 169));
-		pais.setBounds(128, 337, 132, 26);
+		pais.setBackground(new Color(51, 102, 102));
+		pais.setBounds(106, 337, 154, 26);
 		contentPane.add(pais);
 		
 		final JLabel paisLabel = new JLabel("País:");
+		paisLabel.setForeground(Color.WHITE);
 		paisLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		paisLabel.setBounds(39, 6, 54, 16);
+		paisLabel.setBounds(53, 6, 54, 16);
 		pais.add(paisLabel);
 		
+		final JPanel miembros = new JPanel();
+		miembros.setLayout(null);
+		miembros.setForeground(new Color(220, 220, 220));
+		miembros.setBackground(new Color(47, 79, 79));
+		miembros.setBounds(106, 375, 154, 26);
+		contentPane.add(miembros);
+		
+		final JLabel miembrosLabel = new JLabel("Miembros de familia:");
+		miembrosLabel.setForeground(Color.WHITE);
+		miembrosLabel.setBackground(Color.WHITE);
+		miembrosLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		miembrosLabel.setBounds(6, 6, 142, 16);
+		miembros.add(miembrosLabel);
+		
 		ingresoNombre = new JTextField();
-		ingresoNombre.setBounds(302, 256, 132, 26);
+		ingresoNombre.setBounds(302, 256, 154, 26);
 		contentPane.add(ingresoNombre);
 		ingresoNombre.setColumns(10);
 		
 		ingresoCorreo = new JTextField();
 		ingresoCorreo.setColumns(10);
-		ingresoCorreo.setBounds(302, 299, 132, 26);
+		ingresoCorreo.setBounds(302, 299, 154, 26);
 		contentPane.add(ingresoCorreo);
 		
 		ingresoPais = new JTextField();
 		ingresoPais.setColumns(10);
-		ingresoPais.setBounds(302, 337, 132, 26);
+		ingresoPais.setBounds(302, 337, 154, 26);
 		contentPane.add(ingresoPais);
 		
+		ingresoMiembros = new JTextField();
+		ingresoMiembros.setColumns(10);
+		ingresoMiembros.setBounds(302, 375, 154, 26);
+		contentPane.add(ingresoMiembros);
+		
 		final JPanel botonIngresar = new JPanel();
-		botonIngresar.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent e) {
-				botonIngresar.setBackground(Color.DARK_GRAY);
-			}
-			
-			public void mouseExited(MouseEvent e) {
-				botonIngresar.setBackground(Color.LIGHT_GRAY);
-			}
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-		});
 		botonIngresar.setBackground(Color.LIGHT_GRAY);
 		botonIngresar.setBounds(224, 439, 132, 26);
 		contentPane.add(botonIngresar);
 		botonIngresar.setLayout(null);
 		
-		JLabel ingresoLabel = new JLabel("Ingresar");
-		ingresoLabel.setBounds(35, 6, 61, 16);
+		final JLabel ingresoLabel = new JLabel("Ingresar");
+		ingresoLabel.setBounds(40, 6, 61, 16);
 		botonIngresar.add(ingresoLabel);
-		
-		JPanel miembros = new JPanel();
-		miembros.setLayout(null);
-		miembros.setForeground(new Color(220, 220, 220));
-		miembros.setBackground(new Color(169, 169, 169));
-		miembros.setBounds(128, 375, 132, 26);
-		contentPane.add(miembros);
-		
-		JLabel miembrosLabel = new JLabel("Miembros:");
-		miembrosLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		miembrosLabel.setBounds(32, 6, 73, 16);
-		miembros.add(miembrosLabel);
-		
-		ingresoMiembros = new JTextField();
-		ingresoMiembros.setColumns(10);
-		ingresoMiembros.setBounds(302, 375, 132, 26);
-		contentPane.add(ingresoMiembros);
+		botonIngresar.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) {
+				botonIngresar.setBackground(Color.darkGray);
+				ingresoLabel.setForeground(Color.WHITE);
+			}
+			public void mouseExited(MouseEvent e) {
+				botonIngresar.setBackground(Color.LIGHT_GRAY);
+				ingresoLabel.setForeground(Color.BLACK);
+			}
+			public void mouseClicked(MouseEvent e) {
+				usuario.setNombre(ingresoNombre.getText());
+				usuario.setCorreo(ingresoCorreo.getText());
+				usuario.setPais(ingresoPais.getText());
+				usuario.setMiembros(Integer.parseInt(ingresoMiembros.getText()));
+				VentanaDatos ventanaNueva = new VentanaDatos();
+				ventanaNueva.setVisible(true);
+			}
+		});
 	}
 }
