@@ -6,14 +6,12 @@ public class GastoEnergía{
     private int hornoelectrico;
     private int lavadora;
     private int lavavajillas;
-    private int aspiradora;
     private int tostadora;
     private int licuadora;
     private int refrigerador;
     private int ventilador;
     private int secadora;
     private int plancha;
-    private int television;
     private int consoladevideojuegos;
     private int bombilla;
     private int computadoraescritorio;
@@ -38,14 +36,12 @@ public class GastoEnergía{
         this.hornoelectrico = hornoelectrico;
         this.lavadora = lavadora;
         this.lavavajillas = lavavajillas;
-        this.aspiradora = aspiradora;
         this.tostadora = tostadora;
         this.licuadora = licuadora;
         this.refrigerador = refrigerador;
         this.ventilador = ventilador;
         this.secadora = secadora;
         this.plancha = plancha;
-        this.television = television;
         this.consoladevideojuegos = consoladevideojuegos;
         this.bombilla = bombilla;
         this.computadoraescritorio = computadoraescritorio;
@@ -111,14 +107,6 @@ public class GastoEnergía{
         this.lavavajillas = lavavajillas;
     }
 
-    public int getAspiradora() {
-        return this.aspiradora;
-    }
-
-    public void setAspiradora(int aspiradora) {
-        this.aspiradora = aspiradora;
-    }
-
     public int getTostadora() {
         return this.tostadora;
     }
@@ -165,14 +153,6 @@ public class GastoEnergía{
 
     public void setPlancha(int plancha) {
         this.plancha = plancha;
-    }
-
-    public int getTelevision() {
-        return this.television;
-    }
-
-    public void setTelevision(int television) {
-        this.television = television;
     }
 
     public int getConsoladevideojuegos() {
@@ -266,11 +246,6 @@ public class GastoEnergía{
         return this;
     }
 
-    public GastoEnergía aspiradora(int aspiradora) {
-        setAspiradora(aspiradora);
-        return this;
-    }
-
     public GastoEnergía tostadora(int tostadora) {
         setTostadora(tostadora);
         return this;
@@ -298,11 +273,6 @@ public class GastoEnergía{
 
     public GastoEnergía plancha(int plancha) {
         setPlancha(plancha);
-        return this;
-    }
-
-    public GastoEnergía television(int television) {
-        setTelevision(television);
         return this;
     }
 
@@ -349,7 +319,7 @@ public class GastoEnergía{
             return false;
         }
         GastoEnergía gastoEnergía = (GastoEnergía) o;
-        return calefaccion == gastoEnergía.calefaccion && aireacondicionado == gastoEnergía.aireacondicionado && televisor == gastoEnergía.televisor && microondas == gastoEnergía.microondas && hornoelectrico == gastoEnergía.hornoelectrico && lavadora == gastoEnergía.lavadora && lavavajillas == gastoEnergía.lavavajillas && aspiradora == gastoEnergía.aspiradora && tostadora == gastoEnergía.tostadora && licuadora == gastoEnergía.licuadora && refrigerador == gastoEnergía.refrigerador && ventilador == gastoEnergía.ventilador && secadora == gastoEnergía.secadora && plancha == gastoEnergía.plancha && television == gastoEnergía.television && consoladevideojuegos == gastoEnergía.consoladevideojuegos && bombilla == gastoEnergía.bombilla && computadoraescritorio == gastoEnergía.computadoraescritorio && monitor == gastoEnergía.monitor && impresora == gastoEnergía.impresora && planchadepelo == gastoEnergía.planchadepelo && secadordepelo == gastoEnergía.secadordepelo;
+        return calefaccion == gastoEnergía.calefaccion && aireacondicionado == gastoEnergía.aireacondicionado && televisor == gastoEnergía.televisor && microondas == gastoEnergía.microondas && hornoelectrico == gastoEnergía.hornoelectrico && lavadora == gastoEnergía.lavadora && lavavajillas == gastoEnergía.lavavajillas && tostadora == gastoEnergía.tostadora && licuadora == gastoEnergía.licuadora && refrigerador == gastoEnergía.refrigerador && ventilador == gastoEnergía.ventilador && secadora == gastoEnergía.secadora && plancha == gastoEnergía.plancha && consoladevideojuegos == gastoEnergía.consoladevideojuegos && bombilla == gastoEnergía.bombilla && computadoraescritorio == gastoEnergía.computadoraescritorio && monitor == gastoEnergía.monitor && impresora == gastoEnergía.impresora && planchadepelo == gastoEnergía.planchadepelo && secadordepelo == gastoEnergía.secadordepelo;
     }
 
     @Override
@@ -362,14 +332,12 @@ public class GastoEnergía{
             ", hornoelectrico='" + getHornoelectrico() + "'" +
             ", lavadora='" + getLavadora() + "'" +
             ", lavavajillas='" + getLavavajillas() + "'" +
-            ", aspiradora='" + getAspiradora() + "'" +
             ", tostadora='" + getTostadora() + "'" +
             ", licuadora='" + getLicuadora() + "'" +
             ", refrigerador='" + getRefrigerador() + "'" +
             ", ventilador='" + getVentilador() + "'" +
             ", secadora='" + getSecadora() + "'" +
             ", plancha='" + getPlancha() + "'" +
-            ", television='" + getTelevision() + "'" +
             ", consoladevideojuegos='" + getConsoladevideojuegos() + "'" +
             ", bombilla='" + getBombilla() + "'" +
             ", computadoraescritorio='" + getComputadoraescritorio() + "'" +
