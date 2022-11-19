@@ -27,7 +27,7 @@ import java.io.*
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		File Archivo = new File("C:" + File.separator + "Users" + File.separatorChar + "José Javier Flores" + File.separator + "Desktop" + File.separator + "Prueba.txt");
+		File Archivo = new File("C:" + File.separator + "Users" + File.separatorChar + "Joaquin Aparicio" + File.separator + "Desktop" + File.separator + "Prueba.txt");
 		String Destino = Archivo.getAbsolutePath();
         try{
             Archivo.createNewFile();
